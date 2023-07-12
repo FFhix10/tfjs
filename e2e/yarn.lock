@@ -861,47 +861,69 @@
     semver "^7.3.4"
     tar "^6.1.0"
 
-"@tensorflow/tfjs-backend-cpu@link:../dist/bin/tfjs-backend-cpu/tfjs-backend-cpu_pkg":
+"@tensorflow/tfjs-backend-cpu@link:../link-package/node_modules/@tensorflow/tfjs-backend-cpu":
   version "0.0.0"
   dependencies:
     "@types/seedrandom" "2.4.27"
     seedrandom "2.4.3"
 
-"@tensorflow/tfjs-backend-cpu@link:../link-package/node_modules/@tensorflow/tfjs-backend-cpu":
-  version "0.0.0"
-  uid ""
-
 "@tensorflow/tfjs-backend-wasm@link:../tfjs-backend-wasm":
   version "0.0.0"
-  uid ""
+  dependencies:
+    "@tensorflow/tfjs-backend-cpu" "link:../link-package/node_modules/@tensorflow/tfjs-backend-cpu"
+    "@types/emscripten" "~0.0.34"
 
 "@tensorflow/tfjs-backend-webgl@link:../tfjs-backend-webgl":
   version "0.0.0"
-  uid ""
+  dependencies:
+    "@tensorflow/tfjs-backend-cpu" "link:../link-package/node_modules/@tensorflow/tfjs-backend-cpu"
+    "@types/offscreencanvas" "~2019.3.0"
+    "@types/seedrandom" "2.4.27"
+    "@types/webgl-ext" "0.0.30"
+    "@types/webgl2" "0.0.5"
+    seedrandom "2.4.3"
 
 "@tensorflow/tfjs-converter@link:../tfjs-converter":
   version "0.0.0"
-  uid ""
 
 "@tensorflow/tfjs-core@link:../link-package/node_modules/@tensorflow/tfjs-core":
   version "0.0.0"
-  uid ""
 
 "@tensorflow/tfjs-data@link:../tfjs-data":
   version "0.0.0"
-  uid ""
+  dependencies:
+    "@types/node-fetch" "^2.1.2"
+    node-fetch "~2.6.1"
 
 "@tensorflow/tfjs-layers@link:../tfjs-layers":
   version "0.0.0"
-  uid ""
 
 "@tensorflow/tfjs-node@link:../tfjs-node":
   version "0.0.0"
-  uid ""
+  dependencies:
+    "@mapbox/node-pre-gyp" "1.0.4"
+    "@tensorflow/tfjs" "link:../tfjs"
+    adm-zip "^0.4.11"
+    google-protobuf "^3.9.2"
+    https-proxy-agent "^2.2.1"
+    progress "^2.0.0"
+    rimraf "^2.6.2"
+    tar "^4.4.6"
 
 "@tensorflow/tfjs@link:../tfjs":
   version "0.0.0"
-  uid ""
+  dependencies:
+    "@tensorflow/tfjs-backend-cpu" "link:../link-package/node_modules/@tensorflow/tfjs-backend-cpu"
+    "@tensorflow/tfjs-backend-webgl" "link:../tfjs-backend-webgl"
+    "@tensorflow/tfjs-converter" "link:../tfjs-converter"
+    "@tensorflow/tfjs-core" "link:../link-package/node_modules/@tensorflow/tfjs-core"
+    "@tensorflow/tfjs-data" "link:../tfjs-data"
+    "@tensorflow/tfjs-layers" "link:../tfjs-layers"
+    argparse "^1.0.10"
+    chalk "^4.1.0"
+    core-js "3"
+    regenerator-runtime "^0.13.5"
+    yargs "^16.0.3"
 
 "@types/component-emitter@^1.2.10":
   version "1.2.10"
@@ -934,11 +956,6 @@
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.0.0.tgz#9a6b6755a02fcd6baa088a767557709c79728f98"
   integrity sha512-yeQ81bQ46gOfj+AQLp5/x0Kylq6lz9d5a82Vo5JS63rDn1ctoItKcwrcKEM1wGsjqA4SrYkzzIHo8dbq8RhG5w==
-
-"@types/long@^4.0.1":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.1.tgz#459c65fa1867dafe6a8f322c4c51695663cc55e9"
-  integrity sha512-5tXH6Bx/kNGd3MgffdmP4dy2Z+G4eaXw0SE81Tq3BNadtnMR5/ySMzX4SLEzHJzSmPNn4HIdpQsBvXMUykr58w==
 
 "@types/mathjs@^5.0.1":
   version "5.0.1"
@@ -2854,11 +2871,6 @@ log4js@^6.2.1, log4js@^6.3.0:
     rfdc "^1.1.4"
     streamroller "^2.2.4"
 
-long@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/long/-/long-4.0.0.tgz#9a7b71cfb7d361a194ea555241c92f7468d5bf28"
-  integrity sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==
-
 lru-cache@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-6.0.0.tgz#6d6fe6570ebd96aaf90fcad1dafa3b2566db3a94"
@@ -3499,19 +3511,19 @@ semver@7.0.0:
   integrity sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A==
 
 semver@^5.1.0, semver@^5.3.0:
-  version "5.7.1"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
-  integrity sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==
+  version "5.7.2"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.2.tgz#48d55db737c3287cd4835e17fa13feace1c41ef8"
+  integrity sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==
 
 semver@^6.0.0, semver@^6.1.1, semver@^6.1.2, semver@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
-  integrity sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.1.tgz#556d2ef8689146e46dcea4bfdd095f3434dffcb4"
+  integrity sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==
 
 semver@^7.3.4:
-  version "7.3.5"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.5.tgz#0b621c879348d8998e4b0e4be94b3f12e6018ef7"
-  integrity sha512-PoeGJYh8HK4BTO/a9Tf6ZG3veo/A7ZVsYrSA6J8ny9nb3B1VrpkuN+z9OE5wfE5p6H4LchYZsegiQgbJD94ZFQ==
+  version "7.5.4"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.5.4.tgz#483986ec4ed38e1c6c48c34894a9182dbff68a6e"
+  integrity sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==
   dependencies:
     lru-cache "^6.0.0"
 
